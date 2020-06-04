@@ -1,4 +1,5 @@
-﻿namespace GrandeLagoAzulPiscinas
+﻿
+namespace GrandeLagoAzulPiscinas
 {
     partial class fMain
     {
@@ -44,18 +45,24 @@
             this.softwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conectarDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.consultaToolStripMenuItem,
             this.softwareToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(123, 450);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,7 +73,7 @@
             this.produtoToolStripMenuItem,
             this.pedidoToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // clienteToolStripMenuItem
@@ -75,34 +82,34 @@
             this.pessoaFísicaToolStripMenuItem,
             this.pessoaJurídicaToolStripMenuItem});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // pessoaFísicaToolStripMenuItem
             // 
             this.pessoaFísicaToolStripMenuItem.Name = "pessoaFísicaToolStripMenuItem";
-            this.pessoaFísicaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.pessoaFísicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pessoaFísicaToolStripMenuItem.Text = "Pessoa Física";
             this.pessoaFísicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaFísicaToolStripMenuItem_Click);
             // 
             // pessoaJurídicaToolStripMenuItem
             // 
             this.pessoaJurídicaToolStripMenuItem.Name = "pessoaJurídicaToolStripMenuItem";
-            this.pessoaJurídicaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.pessoaJurídicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pessoaJurídicaToolStripMenuItem.Text = "Pessoa Jurídica";
             this.pessoaJurídicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaJurídicaToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // pedidoToolStripMenuItem
             // 
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pedidoToolStripMenuItem.Text = "Pedido";
             this.pedidoToolStripMenuItem.Click += new System.EventHandler(this.pedidoToolStripMenuItem_Click);
             // 
@@ -113,7 +120,7 @@
             this.produtoToolStripMenuItem1,
             this.pedidosToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
             this.consultaToolStripMenuItem.Text = "Consulta";
             // 
             // clienteToolStripMenuItem1
@@ -122,7 +129,7 @@
             this.pessoaFísicaToolStripMenuItem1,
             this.pessoaJurídicaToolStripMenuItem1});
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             // 
             // pessoaFísicaToolStripMenuItem1
@@ -142,14 +149,14 @@
             // produtoToolStripMenuItem1
             // 
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem1.Text = "Produto";
             this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
@@ -157,9 +164,10 @@
             // 
             this.softwareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.versãoToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.sairToolStripMenuItem,
+            this.conectarDBToolStripMenuItem});
             this.softwareToolStripMenuItem.Name = "softwareToolStripMenuItem";
-            this.softwareToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.softwareToolStripMenuItem.Size = new System.Drawing.Size(116, 19);
             this.softwareToolStripMenuItem.Text = "Software";
             // 
             // versãoToolStripMenuItem
@@ -176,6 +184,13 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // conectarDBToolStripMenuItem
+            // 
+            this.conectarDBToolStripMenuItem.Name = "conectarDBToolStripMenuItem";
+            this.conectarDBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conectarDBToolStripMenuItem.Text = "Conectar DB";
+            this.conectarDBToolStripMenuItem.Click += new System.EventHandler(this.conectarDBToolStripMenuItem_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +201,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fMain";
             this.Text = "Grande Lago Azul Piscinas";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -211,6 +227,7 @@
         private System.Windows.Forms.ToolStripMenuItem softwareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem versãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conectarDBToolStripMenuItem;
     }
 }
 

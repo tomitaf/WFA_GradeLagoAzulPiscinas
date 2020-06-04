@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using GrandeLagoAzulPiscinas.Formularios;
 
 namespace GrandeLagoAzulPiscinas
 {
@@ -29,6 +31,7 @@ namespace GrandeLagoAzulPiscinas
 
         private void pessoaFísicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             fCadastroPF frmCadastroPF = new fCadastroPF();
             frmCadastroPF.MdiParent = this;
             frmCadastroPF.Show();
@@ -69,6 +72,38 @@ namespace GrandeLagoAzulPiscinas
         private void versãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Versão 1.0");
+        }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void conectarDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string strConn = "server=localhost;port=3306;User Id=root;database=dbGLAP;password=fmt12345";
+            MySqlConnection conn = new MySqlConnection(strConn);
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Conectado a dbGLAP");
+                conn.Close();
+                MessageBox.Show("Desconectado de dbGLAP");
+            }
+            catch(MySqlException except)
+            {
+                MessageBox.Show(except.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
     }
 }
