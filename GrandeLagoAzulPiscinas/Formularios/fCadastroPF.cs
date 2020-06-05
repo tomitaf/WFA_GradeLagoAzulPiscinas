@@ -94,7 +94,19 @@ namespace GrandeLagoAzulPiscinas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            txtNomePF.Text = null;
+            txtCPF.Text = null;
+            txtEndereco.Text = null;
+            txtEndNumPF.Text = null;
+            txtEnderecoComplemento.Text = null;
+            txtBairro.Text = null;
+            txtCEP.Text = null;
+            txtCidade.Text = null;
+            txtEstado.Text = null;
+            txtTelResidencial.Text = null;
+            txtTelComercial.Text = null;
+            txtTelCelular.Text = null;
+            txtEmail.Text = null;
         }
 
         private void txtStatus_Click(object sender, EventArgs e)
