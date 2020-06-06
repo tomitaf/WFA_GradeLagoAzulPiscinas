@@ -16,7 +16,10 @@ namespace GrandeLagoAzulPiscinas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
+            fMain mainForm = new fMain();
+            mainForm.WindowState = FormWindowState.Maximized;
+            Application.Run(mainForm);
+            
             //Application.Run(new MDIParent1()); 
         }
     }

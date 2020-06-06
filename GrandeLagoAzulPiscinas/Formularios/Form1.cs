@@ -31,9 +31,9 @@ namespace GrandeLagoAzulPiscinas
 
         private void pessoaFísicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             fCadastroPF frmCadastroPF = new fCadastroPF();
             frmCadastroPF.MdiParent = this;
+            frmCadastroPF.WindowState = FormWindowState.Maximized;
             frmCadastroPF.Show();
         }
 
@@ -41,6 +41,7 @@ namespace GrandeLagoAzulPiscinas
         {
             fCadastroPJ frmCadastroPJ = new fCadastroPJ();
             frmCadastroPJ.MdiParent = this;
+            frmCadastroPJ.WindowState = FormWindowState.Maximized;
             frmCadastroPJ.Show();
         }
 
@@ -56,7 +57,10 @@ namespace GrandeLagoAzulPiscinas
 
         private void pessoaFísicaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não implementado");
+            fConsultaClientePF frmCadastroPF = new fConsultaClientePF();
+            frmCadastroPF.MdiParent = this;
+            frmCadastroPF.WindowState = FormWindowState.Maximized;  //Garante que a tela será aberta maximizada
+            frmCadastroPF.Show();
         }
 
         private void pessoaJurídicaToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -103,6 +107,16 @@ namespace GrandeLagoAzulPiscinas
             {
                 conn.Close();
             }
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

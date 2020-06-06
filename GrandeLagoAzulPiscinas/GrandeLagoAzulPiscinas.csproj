@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\ClientePF.cs" />
-    <Compile Include="Entidades\ClientePJ.cs" />
-    <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\FuncoesAuxiliares.cs" />
+    <Compile Include="Entidades\FuncoesDB.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Formularios\Exceptions\ExceptInput.cs" />
+    <Compile Include="Formularios\Exceptions\FormException.cs" />
     <Compile Include="Formularios\fCadastroPF.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using GrandeLagoAzulPiscinas.ServicosDB;
+using GrandeLagoAzulPiscinas.Formularios.Exceptions;
 
 namespace GrandeLagoAzulPiscinas
 {
@@ -17,6 +18,7 @@ namespace GrandeLagoAzulPiscinas
         public fCadastroPF()
         {
             InitializeComponent();
+            stripStatLabelCadastroPF.Text = " ";
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -31,60 +33,63 @@ namespace GrandeLagoAzulPiscinas
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
+            List<string> listaInputExcept = new List<string>();
             // Lê os dados digitados pelo usuário na tela de CadastroPF
-            string nome = txtNomePF.Text;
-            string cpf = txtCPF.Text;
-            string endereco = txtEndereco.Text;
-            string numeroEnd = txtEndNumPF.Text;
-            string complementoEnd = txtEnderecoComplemento.Text;
-            string bairro = txtBairro.Text;
-            string cep = txtCEP.Text;
-            string cidade = txtCidade.Text;
-            string estado = txtEstado.Text;
-            string telResidencial = txtTelResidencial.Text;
-            string telComercial = txtTelComercial.Text;
-            string telCelular = txtTelCelular.Text;
-            string email = txtEmail.Text;
+            string cdNome = ExceptInput.ValidaInputString(txtNomePF.Text, "Nome", listaInputExcept);
+            string cdCpf = ExceptInput.ValidaInputString(txtCPF.Text, "CPF", listaInputExcept);
+            string cdLogradouro = txtEndereco.Text;
+            string cdEndNum = txtEndNumPF.Text;
+            string cdEndComplemento = txtEnderecoComplemento.Text;
+            string cdBairro = txtBairro.Text;
+            string cdCEP = txtCEP.Text;
+            string cdCidade = txtCidade.Text;
+            string cdEstado = cmbEstado.Text;
+            string TelRes = txtTelResidencial.Text;
+            string TelCom = txtTelComercial.Text;
+            string TelCel = txtTelCelular.Text;
+            string Email = txtEmail.Text;
+            string Observacao = txtObservacaoPF.Text;
 
-            //Monta a query de inserção
-            string query = "insert into T01_CadastroClientesPF "
-                + "(cdCpf,cdNome,cdLogradouro,cdEndNum,cdEndComplemento,cdBairro,cdCEP,cdCidade,cdEstado,TelRes,TelCel,TelCom,Email) values "
-                + "('"
-                + cpf.ToString() + "','"
-                + nome + "','"
-                + endereco + "','"
-                + numeroEnd + "','"
-                + complementoEnd + "','"
-                + bairro + "','"
-                + cep + "','"
-                + cidade + "','"
-                + estado + "','"
-                + telResidencial + "','"
-                + telCelular + "','"
-                + telComercial + "','"
-                + email + "')";
-            //MessageBox.Show(cmd);
-            
-            
             MySqlConnection conn = new MySqlConnection(ServDbConnection.GetStrConnection());
+
             try
             {
+                if (listaInputExcept.Count > 0) throw new FormException(listaInputExcept[0]);
+                //Monta a query de inserção
+                string query = "insert into T01_CadastroClientesPF "
+                    + "(cdCpf,cdNome,cdLogradouro,cdEndNum,cdEndComplemento,cdBairro,cdCEP,cdCidade,cdEstado,TelRes,TelCel,TelCom,Email,Observacao) values "
+                    + "('"
+                    + cdCpf.ToString() + "','"
+                    + cdNome + "','"
+                    + cdLogradouro + "','"
+                    + cdEndNum + "','"
+                    + cdEndComplemento + "','"
+                    + cdBairro + "','"
+                    + cdCEP + "','"
+                    + cdCidade + "','"
+                    + cdEstado + "','"
+                    + TelRes + "','"
+                    + TelCel + "','"
+                    + TelCom + "','"
+                    + Email + "','"
+                    + Observacao + "')";           
+            
                 conn.Open();
                 MySqlCommand cmdObj = new MySqlCommand(query,conn);
                 cmdObj.ExecuteNonQuery();
                 conn.Close();
-                txtStatus.Text = "Novo cliente cadastrado";
+                stripStatLabelCadastroPF.Text = "Novo cliente cadastrado";
                 
             }
             catch(MySqlException except)
             {
                 //MessageBox.Show(except.Message);
                 conn.Close();
-                txtStatus.Text = "Erro no cadastro: " + except.Message;
+                stripStatLabelCadastroPF.Text = "Erro no cadastro: " + except.Message;
             }
-            catch(Exception except)
+            catch(FormException except)
             {
-                txtStatus.Text = "Erro não tratado: " + except.Message;
+                stripStatLabelCadastroPF.Text = "Erro nos dados digitados: " + except.Message;
             }
             finally
             {
@@ -94,6 +99,7 @@ namespace GrandeLagoAzulPiscinas
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Limpa os valores digitados na tela de cadastro.
             txtNomePF.Text = null;
             txtCPF.Text = null;
             txtEndereco.Text = null;
@@ -102,16 +108,27 @@ namespace GrandeLagoAzulPiscinas
             txtBairro.Text = null;
             txtCEP.Text = null;
             txtCidade.Text = null;
-            txtEstado.Text = null;
+            cmbEstado.Text = null;
             txtTelResidencial.Text = null;
             txtTelComercial.Text = null;
             txtTelCelular.Text = null;
             txtEmail.Text = null;
+            txtObservacaoPF.Text = null;
         }
 
         private void txtStatus_Click(object sender, EventArgs e)
         {
-            txtStatus.Text = " ";
+       
+        }
+
+        private void fCadastroPF_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

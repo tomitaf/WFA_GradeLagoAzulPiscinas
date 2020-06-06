@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrandeLagoAzulPiscinas.Entidades
 {
-    class ClientePJ : Cliente
+    class Pedido
     {
-        public string CNPJ { get; set; }
-        public Endereco EnderecoCobranca { get; set; }
-
     }
 }
