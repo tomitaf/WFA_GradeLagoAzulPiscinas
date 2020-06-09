@@ -43,6 +43,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
         private void btnConsultaCadastroPF_Click(object sender, EventArgs e)
         {
             // Lê os dados de entrada
+            
             string nome = txtNomeBusca.Text;
             string cpf = txtCPFBusca.Text;
             string logradouro = txtLogradouroBusca.Text;
@@ -52,6 +53,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             HashSet<ClientePF> listaClientesAux = new HashSet<ClientePF>();
             HashSet<ClientePF> listaClientesTelefone = new HashSet<ClientePF>();
             cboxResBuscaPF.Items.Clear();
+            LimpaTelaConsultaPF();
             MySqlConnection conn = new MySqlConnection(ServDbConnection.GetStrConnection());
             try
             {
@@ -199,6 +201,64 @@ namespace GrandeLagoAzulPiscinas.Formularios
             txtLogradouroBusca.Text = "";
             txtTelBusca.Text = "";
             txtCPFBusca.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Não implementado");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja deletar " + lblNome.Text + " (" + lblCPF.Text + ")?","Deletar cadastro",MessageBoxButtons.YesNo);
+            if(dr == DialogResult.Yes)
+            {
+                string cpf = lblCPF.Text;
+                string query = "delete from dbglap.t01_cadastroclientespf where cdCPF = '" + cpf + "'";
+                MySqlConnection conn = new MySqlConnection(ServDbConnection.GetStrConnection());
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                
+                }
+                catch(Exception except)
+                {
+                    txtStatusBarConsultaPF.Text = except.Message;
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                LimpaTelaConsultaPF();
+            }
+            else
+            {
+                txtStatusBarConsultaPF.Text = "Operação cancelada";
+            }
+        }
+
+        private void LimpaTelaConsultaPF()
+        {
+            lblResultadoPesquisa.Text = "";
+            lblNome.Text = "";
+            lblCPF.Text = "";
+            lblLogradouro.Text = "";
+            lblEndNUm.Text = "";
+            lblEndComplemento.Text = "";
+            lblCEP.Text = "";
+            lblBairro.Text = "";
+            lblCidade.Text = "";
+            lblEstado.Text = "";
+            lblTelRes.Text = "";
+            lblTelCel.Text = "";
+            lblTelCom.Text = "";
+            lblEmail.Text = "";
+            lblObservacao.Text = "";
+
         }
     }
 }
