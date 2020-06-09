@@ -25,5 +25,11 @@ namespace GrandeLagoAzulPiscinas.Formularios.Exceptions
             }
             return nome;
         }
+
+        public static string ValidaInputTelefone(string telefone)
+        {
+            if (telefone.Substring(0, 4) == "(11)") return "";
+            return telefone;
+        }
     }
 }

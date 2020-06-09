@@ -119,5 +119,10 @@ namespace GrandeLagoAzulPiscinas
         {
 
         }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="Entidades\FuncoesAuxiliares.cs" />
     <Compile Include="Entidades\FuncoesDB.cs" />
     <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Formularios\Exceptions\ExceptInput.cs" />
     <Compile Include="Formularios\Exceptions\FormException.cs" />
     <Compile Include="Formularios\fCadastroPF.cs">
@@ -118,6 +119,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Servicos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

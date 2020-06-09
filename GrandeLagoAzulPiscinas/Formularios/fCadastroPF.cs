@@ -19,6 +19,9 @@ namespace GrandeLagoAzulPiscinas
         {
             InitializeComponent();
             stripStatLabelCadastroPF.Text = " ";
+            txtTelResidencial.Text = "(11)";
+            txtTelCelular.Text = "(11)";
+            txtTelComercial.Text = "(11)";
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -44,9 +47,9 @@ namespace GrandeLagoAzulPiscinas
             string cdCEP = txtCEP.Text;
             string cdCidade = txtCidade.Text;
             string cdEstado = cmbEstado.Text;
-            string TelRes = txtTelResidencial.Text;
-            string TelCom = txtTelComercial.Text;
-            string TelCel = txtTelCelular.Text;
+            string TelRes = ExceptInput.ValidaInputTelefone(txtTelResidencial.Text);
+            string TelCom = ExceptInput.ValidaInputTelefone(txtTelComercial.Text);
+            string TelCel = ExceptInput.ValidaInputTelefone(txtTelCelular.Text);
             string Email = txtEmail.Text;
             string Observacao = txtObservacaoPF.Text;
 

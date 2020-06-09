@@ -30,6 +30,7 @@ namespace GrandeLagoAzulPiscinas
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaFísicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@ namespace GrandeLagoAzulPiscinas
             this.versãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +65,19 @@ namespace GrandeLagoAzulPiscinas
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 3, 0, 3);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(99, 588);
+            this.menuStrip1.Size = new System.Drawing.Size(124, 588);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // sToolStripMenuItem
+            // 
+            this.sToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(115, 4);
+            this.sToolStripMenuItem.Text = "s";
+            this.sToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -78,7 +87,7 @@ namespace GrandeLagoAzulPiscinas
             this.pedidoToolStripMenuItem});
             this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // clienteToolStripMenuItem
@@ -126,7 +135,7 @@ namespace GrandeLagoAzulPiscinas
             this.pedidosToolStripMenuItem});
             this.consultaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
             this.consultaToolStripMenuItem.Text = "Consulta";
             // 
             // clienteToolStripMenuItem1
@@ -137,6 +146,7 @@ namespace GrandeLagoAzulPiscinas
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
             this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 30);
             this.clienteToolStripMenuItem1.Text = "Cliente";
+            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // pessoaFísicaToolStripMenuItem1
             // 
@@ -174,7 +184,7 @@ namespace GrandeLagoAzulPiscinas
             this.conectarDBToolStripMenuItem});
             this.softwareToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.softwareToolStripMenuItem.Name = "softwareToolStripMenuItem";
-            this.softwareToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.softwareToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
             this.softwareToolStripMenuItem.Text = "Software";
             // 
             // versãoToolStripMenuItem
@@ -198,15 +208,6 @@ namespace GrandeLagoAzulPiscinas
             this.conectarDBToolStripMenuItem.Text = "Conectar DB";
             this.conectarDBToolStripMenuItem.Click += new System.EventHandler(this.conectarDBToolStripMenuItem_Click);
             // 
-            // sToolStripMenuItem
-            // 
-            this.sToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(90, 4);
-            this.sToolStripMenuItem.Text = "s";
-            this.sToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
-            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -217,7 +218,7 @@ namespace GrandeLagoAzulPiscinas
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMain";
             this.Text = "Grande Lago Azul Piscinas";
             this.Load += new System.EventHandler(this.fMain_Load);
