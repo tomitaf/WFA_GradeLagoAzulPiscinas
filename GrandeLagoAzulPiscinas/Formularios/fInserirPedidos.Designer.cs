@@ -31,17 +31,13 @@ namespace GrandeLagoAzulPiscinas.Formularios
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvInserirPedidos = new System.Windows.Forms.DataGridView();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCpfCnpj = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.statusBoxInserirPedidos = new System.Windows.Forms.StatusStrip();
+            this.statusBarInserirPedidos = new System.Windows.Forms.StatusStrip();
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtFormaPagamento = new System.Windows.Forms.ComboBox();
@@ -54,6 +50,10 @@ namespace GrandeLagoAzulPiscinas.Formularios
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotalPedido = new System.Windows.Forms.Label();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInserirPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,39 +72,18 @@ namespace GrandeLagoAzulPiscinas.Formularios
             // 
             this.dgvInserirPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInserirPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Quantidade,
             this.Item,
+            this.Quantidade,
             this.Preço,
             this.Total});
             this.dgvInserirPedidos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dgvInserirPedidos.Location = new System.Drawing.Point(121, 350);
+            this.dgvInserirPedidos.Location = new System.Drawing.Point(121, 396);
             this.dgvInserirPedidos.Name = "dgvInserirPedidos";
             this.dgvInserirPedidos.Size = new System.Drawing.Size(935, 429);
             this.dgvInserirPedidos.TabIndex = 1;
             this.dgvInserirPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvInserirPedidos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInserirPedidos_CellEndEdit);
             this.dgvInserirPedidos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvInserirPedidos_EditingControlShowing);
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.Width = 90;
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.Width = 600;
-            // 
-            // Preço
-            // 
-            this.Preço.HeaderText = "Preço Unitário (R$)";
-            this.Preço.Name = "Preço";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total Item (R$)";
-            this.Total.Name = "Total";
             // 
             // label2
             // 
@@ -163,13 +142,13 @@ namespace GrandeLagoAzulPiscinas.Formularios
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // statusBoxInserirPedidos
+            // statusBarInserirPedidos
             // 
-            this.statusBoxInserirPedidos.Location = new System.Drawing.Point(0, 980);
-            this.statusBoxInserirPedidos.Name = "statusBoxInserirPedidos";
-            this.statusBoxInserirPedidos.Size = new System.Drawing.Size(1341, 22);
-            this.statusBoxInserirPedidos.TabIndex = 9;
-            this.statusBoxInserirPedidos.Text = "statusStrip1";
+            this.statusBarInserirPedidos.Location = new System.Drawing.Point(0, 980);
+            this.statusBarInserirPedidos.Name = "statusBarInserirPedidos";
+            this.statusBarInserirPedidos.Size = new System.Drawing.Size(1341, 22);
+            this.statusBarInserirPedidos.TabIndex = 9;
+            this.statusBarInserirPedidos.Text = "statusStrip1";
             // 
             // cmbVendedor
             // 
@@ -290,7 +269,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(834, 942);
+            this.label9.Location = new System.Drawing.Point(877, 369);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 24);
             this.label9.TabIndex = 20;
@@ -302,16 +281,39 @@ namespace GrandeLagoAzulPiscinas.Formularios
             this.lblTotalPedido.BackColor = System.Drawing.SystemColors.Window;
             this.lblTotalPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTotalPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblTotalPedido.Location = new System.Drawing.Point(982, 940);
+            this.lblTotalPedido.Location = new System.Drawing.Point(982, 367);
             this.lblTotalPedido.Name = "lblTotalPedido";
             this.lblTotalPedido.Size = new System.Drawing.Size(72, 26);
             this.lblTotalPedido.TabIndex = 21;
             this.lblTotalPedido.Text = "label10";
             // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            this.Item.Width = 600;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.Width = 90;
+            // 
+            // Preço
+            // 
+            this.Preço.HeaderText = "Preço Unitário (R$)";
+            this.Preço.Name = "Preço";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total Item (R$)";
+            this.Total.Name = "Total";
+            // 
             // fInserirPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1341, 1002);
             this.Controls.Add(this.lblTotalPedido);
@@ -326,7 +328,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             this.Controls.Add(this.txtFormaPagamento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbVendedor);
-            this.Controls.Add(this.statusBoxInserirPedidos);
+            this.Controls.Add(this.statusBarInserirPedidos);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtCpfCnpj);
             this.Controls.Add(this.label4);
@@ -352,11 +354,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.StatusStrip statusBoxInserirPedidos;
+        private System.Windows.Forms.StatusStrip statusBarInserirPedidos;
         private System.Windows.Forms.ComboBox cmbVendedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox txtFormaPagamento;
@@ -371,5 +369,9 @@ namespace GrandeLagoAzulPiscinas.Formularios
         public System.Windows.Forms.ComboBox cmbTipoCliente;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblTotalPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

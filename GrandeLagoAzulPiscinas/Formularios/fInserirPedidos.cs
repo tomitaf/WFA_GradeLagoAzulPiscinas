@@ -62,7 +62,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             }
             catch(Exception except)
             {
-                statusBoxInserirPedidos.Text = except.Message;
+                statusBarInserirPedidos.Text = except.Message;
                 conn.Close();
             }
             finally
@@ -93,6 +93,41 @@ namespace GrandeLagoAzulPiscinas.Formularios
                 {
                     tb.AutoCompleteMode = AutoCompleteMode.None;
                 }
+            }
+        }
+
+        private void dgvInserirPedidos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    decimal cell1 = Convert.ToDecimal(dgvInserirPedidos.CurrentRow.Cells[1].Value);
+                    decimal cell2 = Convert.ToDecimal(dgvInserirPedidos.CurrentRow.Cells[2].Value);
+                    if (cell1.ToString() != "" && cell2.ToString() != "")
+                    {
+                        dgvInserirPedidos.CurrentRow.Cells[3].Value = cell1 * cell2;
+                    }
+                }
+                decimal valorTotal = 0;
+                string valor = "";
+                if (dgvInserirPedidos.CurrentRow.Cells[3].Value != null)
+                {
+                    valor = dgvInserirPedidos.CurrentRow.Cells[3].Value.ToString();
+                    if (!valor.Equals(""))
+                    {
+                        for (int i = 0; i <= dgvInserirPedidos.RowCount - 1; i++)
+                        {
+                            if (dgvInserirPedidos.Rows[i].Cells[3].Value != null)
+                                valorTotal += Convert.ToDecimal(dgvInserirPedidos.Rows[i].Cells[3].Value);
+                        }
+                        lblTotalPedido.Text = valorTotal.ToString("C");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                statusBarInserirPedidos.Text = ex.Message;
             }
         }
     }
