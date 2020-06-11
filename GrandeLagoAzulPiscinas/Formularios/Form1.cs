@@ -124,5 +124,13 @@ namespace GrandeLagoAzulPiscinas
         {
 
         }
+
+        private void inserirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fInserirPedidos frmInserirPedido = new fInserirPedidos();
+            frmInserirPedido.MdiParent = this;
+            frmInserirPedido.WindowState = FormWindowState.Maximized;
+            frmInserirPedido.Show();
+        }
     }
 }

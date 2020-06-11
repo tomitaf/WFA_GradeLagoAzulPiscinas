@@ -78,6 +78,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.stsBarBuscaPF.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -363,7 +364,7 @@
             this.txtStatusBarConsultaPF});
             this.stsBarBuscaPF.Location = new System.Drawing.Point(0, 758);
             this.stsBarBuscaPF.Name = "stsBarBuscaPF";
-            this.stsBarBuscaPF.Size = new System.Drawing.Size(1010, 22);
+            this.stsBarBuscaPF.Size = new System.Drawing.Size(1196, 22);
             this.stsBarBuscaPF.TabIndex = 34;
             this.stsBarBuscaPF.Text = "statusStrip1";
             this.stsBarBuscaPF.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -551,7 +552,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.button2.Location = new System.Drawing.Point(597, 344);
+            this.button2.Location = new System.Drawing.Point(993, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(191, 88);
             this.button2.TabIndex = 53;
@@ -562,7 +563,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.button3.Location = new System.Drawing.Point(816, 344);
+            this.button3.Location = new System.Drawing.Point(993, 517);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(191, 88);
             this.button3.TabIndex = 54;
@@ -580,12 +581,24 @@
             this.label7.TabIndex = 55;
             this.label7.Text = "Logradouro";
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.button4.Location = new System.Drawing.Point(993, 313);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(191, 88);
+            this.button4.TabIndex = 56;
+            this.button4.Text = "Fazer Pedido";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // fConsultaClientePF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1010, 780);
+            this.ClientSize = new System.Drawing.Size(1196, 780);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -661,7 +674,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label101;
+        //private System.Windows.Forms.Label label101;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -698,5 +711,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
     }
 }

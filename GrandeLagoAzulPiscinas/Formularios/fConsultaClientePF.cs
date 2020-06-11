@@ -258,7 +258,17 @@ namespace GrandeLagoAzulPiscinas.Formularios
             lblTelCom.Text = "";
             lblEmail.Text = "";
             lblObservacao.Text = "";
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fInserirPedidos frmInserirPedido = new fInserirPedidos();
+            //frmInserirPedido.MdiParent = fMain;
+            frmInserirPedido.WindowState = FormWindowState.Maximized;
+            frmInserirPedido.txtCliente.Text = lblNome.Text;
+            frmInserirPedido.txtCpfCnpj.Text = lblCPF.Text;
+            frmInserirPedido.cmbTipoCliente.Text = "Pessoa física";
+            frmInserirPedido.Show();
         }
     }
 }

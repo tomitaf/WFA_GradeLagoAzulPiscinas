@@ -2,13 +2,13 @@
 {
     class Produto
     {
-        public int Id { get; set; }
+        public string DescItem { get; set; }
         public double Preco { get; set; }
         public double Qtd { get; set; }
 
-        public Produto(int id, double preco, double qtd)
+        public Produto(string descItem, double preco, double qtd)
         {
-            Id = id;
+            DescItem = descItem;
             Preco = preco;
             Qtd = qtd;
         }

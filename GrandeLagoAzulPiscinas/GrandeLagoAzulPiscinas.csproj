@@ -52,12 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\ClientePF.cs" />
+    <Compile Include="Entidades\ClientePJ.cs" />
+    <Compile Include="Entidades\Enums\StatusPagamento.cs" />
     <Compile Include="Entidades\FuncoesAuxiliares.cs" />
     <Compile Include="Entidades\FuncoesDB.cs" />
     <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Formularios\Exceptions\ExceptInput.cs" />
     <Compile Include="Formularios\Exceptions\FormException.cs" />
+    <Compile Include="Formularios\fCadastroPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\fCadastroPedido.Designer.cs">
+      <DependentUpon>fCadastroPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\fCadastroPF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +84,18 @@
     <Compile Include="Formularios\fConsultaClientePF.Designer.cs">
       <DependentUpon>fConsultaClientePF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\fConsultaClientePJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\fConsultaClientePJ.Designer.cs">
+      <DependentUpon>fConsultaClientePJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\fInserirPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\fInserirPedidos.Designer.cs">
+      <DependentUpon>fInserirPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\fConsultaClientePF.resx">
       <DependentUpon>fConsultaClientePF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\fInserirPedidos.resx">
+      <DependentUpon>fInserirPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
