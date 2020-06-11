@@ -78,6 +78,12 @@
     <Compile Include="Formularios\fCadastroPJ.Designer.cs">
       <DependentUpon>fCadastroPJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\fCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\fCadastroProduto.Designer.cs">
+      <DependentUpon>fCadastroProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\fConsultaClientePF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\fCadastroPJ.resx">
       <DependentUpon>fCadastroPJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\fCadastroProduto.resx">
+      <DependentUpon>fCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\fConsultaClientePF.resx">
       <DependentUpon>fConsultaClientePF.cs</DependentUpon>

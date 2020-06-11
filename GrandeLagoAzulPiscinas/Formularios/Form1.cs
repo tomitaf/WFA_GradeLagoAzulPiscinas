@@ -47,7 +47,10 @@ namespace GrandeLagoAzulPiscinas
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não implementado");
+            fCadastroProduto frmCadastroProduto = new fCadastroProduto();
+            frmCadastroProduto.MdiParent = this;
+            frmCadastroProduto.WindowState = FormWindowState.Maximized;  //Garante que a tela será aberta maximizada
+            frmCadastroProduto.Show();
         }
 
         private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)

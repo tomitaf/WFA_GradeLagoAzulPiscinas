@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrandeLagoAzulPiscinas.Entidades;
 using GrandeLagoAzulPiscinas.ServicosDB;
+using System.Globalization;
 using MySql.Data.MySqlClient;
 
 namespace GrandeLagoAzulPiscinas.Formularios
@@ -95,21 +96,22 @@ namespace GrandeLagoAzulPiscinas.Formularios
                 }
             }
         }
-
         private void dgvInserirPedidos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            MySqlConnection conn = new MySqlConnection(ServDbConnection.GetStrConnection());
             try
             {
+                // Trecho do código que implementa o cálculo automático do subtotal do item
                 if (e.ColumnIndex == 1)
                 {
-                    decimal cell1 = Convert.ToDecimal(dgvInserirPedidos.CurrentRow.Cells[1].Value);
-                    decimal cell2 = Convert.ToDecimal(dgvInserirPedidos.CurrentRow.Cells[2].Value);
+                    double cell1 = Convert.ToDouble(dgvInserirPedidos.CurrentRow.Cells[1].Value, CultureInfo.InvariantCulture);
+                    double cell2 = Convert.ToDouble(dgvInserirPedidos.CurrentRow.Cells[2].Value, CultureInfo.InvariantCulture);
                     if (cell1.ToString() != "" && cell2.ToString() != "")
                     {
-                        dgvInserirPedidos.CurrentRow.Cells[3].Value = cell1 * cell2;
+                        dgvInserirPedidos.CurrentRow.Cells[3].Value = Convert.ToDouble(cell1 * cell2, CultureInfo.InvariantCulture);
                     }
                 }
-                decimal valorTotal = 0;
+                double valorTotal = 0;
                 string valor = "";
                 if (dgvInserirPedidos.CurrentRow.Cells[3].Value != null)
                 {
@@ -119,15 +121,51 @@ namespace GrandeLagoAzulPiscinas.Formularios
                         for (int i = 0; i <= dgvInserirPedidos.RowCount - 1; i++)
                         {
                             if (dgvInserirPedidos.Rows[i].Cells[3].Value != null)
-                                valorTotal += Convert.ToDecimal(dgvInserirPedidos.Rows[i].Cells[3].Value);
+                                valorTotal += Convert.ToDouble(dgvInserirPedidos.Rows[i].Cells[3].Value, CultureInfo.InvariantCulture);
                         }
                         lblTotalPedido.Text = valorTotal.ToString("C");
                     }
+                }
+
+
+                // Trecho do código que implementa a busca automática do preço do produto
+                if(e.ColumnIndex == 0)
+                {
+                    string query = "select cdNomeProduto, vlPreco from dbglap.t03_produtos";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    conn.Open();
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    Dictionary<string, double> DictioProdutos = new Dictionary<string, double>();
+                    //statusBarInserirPedidos.Text = "Entrou no código";
+                    //MessageBox.Show("Entrou no código");
+                    while (dr.Read())
+                    {
+                        string key = dr["cdNomeProduto"].ToString();
+                        double value = double.Parse(dr["vlPreco"].ToString());
+                        //double value = Convert.ToDouble(dr["vlPreco"].ToString(),CultureInfo.InvariantCulture);
+                        DictioProdutos[key] = value;
+                        //MessageBox.Show("chave = " + key + ", valor = " + value + ", Valor * 10 = " + value*10);
+                        //MessageBox.Show("chave = " + key + ", valor = " + DictioProdutos[key] + ", valor * 10 = " + DictioProdutos[key]*10);
+                    }
+                    conn.Close();
+
+                    //MessageBox.Show(dgvInserirPedidos.CurrentRow.Cells[1].Value.ToString());
+                    if (dgvInserirPedidos.CurrentRow.Cells[0].ToString() != "")
+                    {
+                        double value = DictioProdutos[dgvInserirPedidos.CurrentRow.Cells[0].Value.ToString()];
+                        //MessageBox.Show("Preco = " + value);
+                        dgvInserirPedidos.CurrentRow.Cells[2].Value = value;
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 statusBarInserirPedidos.Text = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

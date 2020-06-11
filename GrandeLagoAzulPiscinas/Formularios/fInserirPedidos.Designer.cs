@@ -286,6 +286,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             this.lblTotalPedido.Size = new System.Drawing.Size(72, 26);
             this.lblTotalPedido.TabIndex = 21;
             this.lblTotalPedido.Text = "label10";
+            this.lblTotalPedido.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Item
             // 
@@ -306,7 +307,7 @@ namespace GrandeLagoAzulPiscinas.Formularios
             // 
             // Total
             // 
-            this.Total.HeaderText = "Total Item (R$)";
+            this.Total.HeaderText = "Subtotal (R$)";
             this.Total.Name = "Total";
             // 
             // fInserirPedidos
